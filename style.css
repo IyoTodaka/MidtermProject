@@ -3,6 +3,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0;
     border: 0;
     font-size: 100%;
+    text-decoration: none;
     /* font: inherit; */
     vertical-align: baseline;
 }
@@ -77,9 +78,27 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
    
 }
 
+ @media screen and (max-width: 850px){
+    .menu_list{
+        column-gap: 30px;
+    }
+} 
+
+@media screen and (max-width: 500px){
+    .menu_list{
+        column-gap: 15px;
+    }
+} 
+@media screen and (max-width: 500px){
+    .menu_item a {
+        font-size: 0.5rem;
+        letter-spacing: .0.1em;
+    }
+} 
+
 /*  slide  */
 .slides{
-    width: 100vw; 
+    width: 98.9vw; 
     height: 500px; 
     position   : relative;
     overflow   : hidden;
@@ -87,13 +106,13 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 .center_photo{
-    width: 100vw; 
+    width: 100wh; 
     height: 450px; 
     object-fit: cover;
     display    : block;
     position   : absolute;
-    /* width      : inherit;
-    height     : inherit; */
+    width      : inherit;
+    height     : inherit;
     /* opacity    : 0;  */
     animation  : slideAnime 20s ease infinite; 
 
@@ -122,44 +141,370 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
  .news_margin{
+    display: block;
     padding-top: 50px;
     padding-bottom: 74px;
-    padding: 5% 15% ;
+    padding: 5% 13% ;
 }
 
-.news_title{
+@media screen and (max-width: 850px){
+    .news_margin{
+        padding-top: 25px;
+        padding-bottom: 35px;
+        padding: 2% 6% ;
+    }
+}
+
+
+.news_title , .section_title{
     margin-bottom: 30px;
     font-size: 2.5rem;
     letter-spacing: .04em;
-    font-weight: bold;
+    /* font-weight: bold; */
     text-align: center;
 }
 .news_list{
-    flex-wrap: nowrap;
+    
+    /* flex-wrap: nowrap; */
     display: flex;
-    row-gap: 35px;
+    row-gap: 31px;
+    
 }
 
 
-.news_list.news_photo{
+
+
+.news_photo{
     display: block;
     height: 8%;
     margin: auto;
     box-sizing: content-box;
+    /* text-decoration: none; */
 }
 .news_text{
-    line-height: 3;
+    line-height: 1.2;
+    text-decoration: none;
+    margin: 0%;
+    /* word-wrap: break-word; */
+    width: 100%; 
+
+    
 }
 
 .news_img1{
-    width: 30%; 
-    height:auto;  
+    width: 15wh; 
+    height:35vh;
+    text-decoration: none;
+
 }
 
-news_list {
+@media screen and (max-width: 950px){
+    .news_img1{
+        width: 10wh; 
+        height:20vh;;
+        column-gap: 30px;
+    }
+} 
+
+@media screen and (max-width: 530px){
+    .news_img1{
+        width: 6wh; 
+        height:12vh;;
+        column-gap: 12px;
+        flex-wrap: wrap; 
+    }
+} 
+
+@media screen and (max-width: 768px){
+    .news_text{
+        line-height: 0.82;
+        font-size: 60%;
+    }
+} 
+
+.news_list {
     column-gap: calc(10% / 3);
 }
-/* @media screen and (min-width: 768px) and (max-width: 1024px)
-.news_margin {
+
+
+.new_tag{
+    padding: 0 0.8em;
+    background: #FFFF01;
+    font-size: 1.0rem;
+    letter-spacing: .04em;
+    line-height: 4;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    
+
+}
+
+.button{
+    display: inline-block;
+    width: 281px;
+    border: 1px solid #000000;
+    font-size: 1.0rem;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    transition: all .3s ease;
+    cursor: pointer;
+    margin: 5% 5% 1% 38%;
+    color: #000000;
+}
+
+@media screen and (max-width: 700px){
+    .button{
+        width: 120px;
+        font-size: 0.6rem;
+        line-height: 20px;
+        margin: 5% 5% 1% 38%;
+    }
+} 
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    .news_margin {
+        column-gap: 3.5%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    #content_wrap {
+        gap: 4%;
+    }
+}
+@media screen and (max-width: 767px){
+    #content_wrap {
+        padding-top: 20px;
+        max-width: none;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+#content_wrap {
+    padding-top: 95px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    column-gap: 57px;
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 74px;
+    padding: 5% 13% ;
+}
+
+@media screen and (max-width: 767px){
+    #content_wrap #content {
+        order: 1;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    #content, #sidebar {
+        width: 90%;
+        max-width: none;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .card_list, .topics_card_list, .wide_wrap .topics_card_list {
+        column-gap: 5%;
+    }
+}
+.card_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     column-gap: 3.5%;
-} */
+    row-gap: 39px;
+}
+
+@media screen and (max-width: 900px){
+    .card_list{
+        column-gap: 2%;
+        row-gap: 10px;
+    }
+}
+
+
+@media screen and (max-width: 767px){
+    .card, .wide_wrap .topics_card, .topics_card {
+        width: 47.48%;
+    }
+}
+.card {
+    width: 30.7%;
+    border: 1px solid #B3B3B3;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+a, a * {
+    transition: all .3s ease;
+    cursor: pointer;
+}
+
+.card a * {
+    transition: all .3s ease;
+}
+@media screen and (max-width: 414px){
+    .card_imgbox {
+        height: 100px;
+    }
+}
+
+.card_imgbox {
+    overflow: hidden;
+    width: 100%;
+}
+
+.card_imgbox img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}
+@media screen and (max-width: 920px){
+    .card_imgbox img {
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .card_txtbox {
+        height: auto;
+        min-height: 70px;
+        /* padding: 12.5px 11.7px 12.5px; */
+        padding: 7.9% 7.4% 7.9%;
+    }
+}
+
+.card_txtbox {
+    min-height: 80.3px;
+    padding: 20px 17.5px 13.5px;
+    position: relative;
+}
+
+@media screen and (max-width: 767px){
+    .card_more {
+        bottom: 12%;
+        right: 25px;
+    }
+}
+
+.card_more {
+    position: absolute;
+    bottom: 13.5px;
+    right: 35.5px;
+    text-align: right;
+}
+
+.card_more_txt {
+    /* display: inline-block; */
+    font-size: 1.1rem;
+    letter-spacing: .04em;
+    color: #808080;
+    position: relative;
+}
+
+
+@media screen and (max-width: 767px){
+    .card_more_txt {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    .card_ttl{
+       
+        font-size: 0.7rem;
+    }     
+} 
+.gmap {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 40.25%;
+    position: relative;
+    
+    }
+    .gmap iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    }
+
+    #access .access_map::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #pagetop {
+        position: fixed;
+        right: 10px;
+        bottom: 10px;
+        margin: 0;
+    }
+    #pagetop a {
+        position: relative;
+        display: flex;
+        width: 55px;
+        height: 55px;
+        justify-content: center;
+        background: rgb(0, 0, 0);
+        transition: opacity .6s ease;
+        color: #FFF;
+        align-items: center;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 100%;
+    }
+    #pagetop a:hover {
+        opacity: .3;
+    }
+    @media screen and (max-width:767px) {
+    #pagetop a {
+        width: 35px;
+        height: 35px;
+    }
+    }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    padding: 20px;
+  }
